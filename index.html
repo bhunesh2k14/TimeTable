@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" type="text/css";
+    </head>
+<body>
+    
+    <div class="container-fluid jumbotron text-center"><h1 style="font-size:1.5em;">INFORMATION TECHNOLOGY</h1><h2>III SEMESTER</h2>
+        <!--<h1>3rd SEMESTER</h1></div>--></div>
+    <div class="container-fluid text-center">
+<!--<p style =" font-size: 2em;">TIME-TABLE</p>-->
+    <div id="DATE" style = "font-size: 0.75em;"></div><div id ="DAY" style = "font-size: 0.5em;">
+        </div>
+        </div>
+        
+<div class="container-fluid text-center" id="All">
+    
+    
+<h3>CURRENT PERIOD</h3>
+<p id="curperiod"></p>
+<h3>NEXT PERIOD</h3>
+<p id="nextperiod"></p>
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+<script>
+    
+var currentdate = new Date();
+var day = currentdate.getDay();
+var timehr = currentdate.getHours();
+var timemin = currentdate.getMinutes();
+var time = (timehr*100)+timemin; 
+var DAY = ["SUNDAY","MONDAY","TUESDAY","WEDNESSDAY","THURSDAY","FRIDAY","SATURDAY"];
+var MONTH = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"]
+var datetime = " " + currentdate.getDate() + " "
+                + MONTH[(currentdate.getMonth())]  + ", " 
+                + currentdate.getFullYear() ;
+    
+    document.getElementById("DATE").innerHTML = datetime;
+    document.getElementById("DAY").innerHTML = DAY[currentdate.getDay()];
+    
+
+    if (day==0)
+        {
+            document.getElementById("All").innerHTML = "HOLIDAY";
+            //document.getElementById("nextperiod").innerHTML = "SUNDAY HOLIDAY";
+        }
+    if (day==1)
+        {
+            if(time>=915 && time<=1004)
+                {
+                    document.getElementById("curperiod").innerHTML = "DS - SN3";
+                    document.getElementById("nextperiod").innerHTML = "CM - SN3"; 
+                }
+            if(time>=1005 && time<=1054)
+                {
+                    document.getElementById("curperiod").innerHTML = "CM - SN3";
+                    document.getElementById("nextperiod").innerHTML = "OOPS - SN3"; 
+                }
+            if(time>=1055 && time<=1144)
+                {
+                    document.getElementById("curperiod").innerHTML = "OOPS - SN3";
+                    document.getElementById("nextperiod").innerHTML = "MIII - SN3"; 
+                }
+            if(time>=1145 && time<=1234)
+                {
+                    document.getElementById("curperiod").innerHTML = "MIII - SN3";
+                    document.getElementById("nextperiod").innerHTML = "RECESS "; 
+                }
+            if(time>=1235 && time<=1354)
+                {
+                    document.getElementById("curperiod").innerHTML = "RECESS";
+                    document.getElementById("nextperiod").innerHTML = "PD - SN3"; 
+                }
+            if(time>=1355 && time<=1534)
+                {
+                    document.getElementById("curperiod").innerHTML = "PD - SN3";
+                    document.getElementById("nextperiod").innerHTML = "BE - SN3"; 
+                }
+            /*if(time>=1445 && time<=1534)
+                {
+                    document.getElementById("curperiod").innerHTML = "PD - SN3";
+                    document.getElementById("nextperiod").innerHTML = "BE - SN3"; 
+                }*/
+            if(time>=1535 && time<=1624)
+                {
+                    document.getElementById("curperiod").innerHTML = "BE - SN3";
+                    document.getElementById("nextperiod").innerHTML = "COLLEGE OVER"; 
+                }
+            if(time>=1625 && time<=1715)
+                {
+                    document.getElementById("curperiod").innerHTML = "FREE";
+                    document.getElementById("nextperiod").innerHTML = "FREE"; 
+                }
+            else
+                {
+                    documen.getElementById("All").innerHTML = "College Not Started or is Over.";
+                }
+            
+        }
+    if (day==2)
+        {
+            if(time>=915 && time<=1004)
+                {
+                    document.getElementById("curperiod").innerHTML = "OOPS - SN2";
+                    document.getElementById("nextperiod").innerHTML = "CM - SN2"; 
+                }
+            if(time>=1005 && time<=1054)
+                {
+                    document.getElementById("curperiod").innerHTML = "CM - SN2";
+                    document.getElementById("nextperiod").innerHTML = "DELD - SN2"; 
+                }
+            if(time>=1055 && time<=1234)
+                {
+                    document.getElementById("curperiod").innerHTML = "DELD - SN2";
+                    document.getElementById("nextperiod").innerHTML = "RECESS"; 
+                }
+            /*if(time>=1145 && time<=1234)
+                {
+                    document.getElementById("curperiod").innerHTML = "DELD - SN2";
+                    document.getElementById("nextperiod").innerHTML = "RECESS "; 
+                }*/
+            if(time>=1235 && time<=1354)
+                {
+                    document.getElementById("curperiod").innerHTML = "RECESS";
+                    document.getElementById("nextperiod").innerHTML = "BE - SN2"; 
+                }
+            if(time>=1355 && time<=1444)
+                {
+                    document.getElementById("curperiod").innerHTML = "BE - SN2";
+                    document.getElementById("nextperiod").innerHTML = "DS LAB - IT LAB"; 
+                }
+            if(time>=1445 && time<=1715)
+                {
+                    document.getElementById("curperiod").innerHTML = "DS LAB - IT LAB";
+                    document.getElementById("nextperiod").innerHTML = "FREE"; 
+                }
+            /*if(time>=1535 && time<=1624)
+                {
+                    document.getElementById("curperiod").innerHTML = "BE - SN3";
+                    document.getElementById("nextperiod").innerHTML = "FREE "; 
+                }
+            if(time>=1625 && time<=1715)
+                {
+                    document.getElementById("curperiod").innerHTML = "FREE";
+                    document.getElementById("nextperiod").innerHTML = "FREE"; 
+                }*/
+            else
+                {
+                    documen.getElementById("All").innerHTML = "College Not Started or is Over.";
+                }
+        }
+    if (day==3)
+        {
+            if(time>=915 && time<=1004)
+                {
+                    document.getElementById("curperiod").innerHTML = "FREE";
+                    document.getElementById("nextperiod").innerHTML = "OOPS LAB - C LAB"; 
+                }
+            if(time>=1005 && time<=1054)
+                {
+                    document.getElementById("curperiod").innerHTML = "OOPS LAB -C LAB";
+                    document.getElementById("nextperiod").innerHTML = "RECESS"; 
+                }
+            /*if(time>=1055 && time<=1144)
+                {
+                    document.getElementById("curperiod").innerHTML = "OOPS - SN3";
+                    document.getElementById("nextperiod").innerHTML = "MIII - SN3"; 
+                }
+            if(time>=1145 && time<=1234)
+                {
+                    document.getElementById("curperiod").innerHTML = "MIII - SN3";
+                    document.getElementById("nextperiod").innerHTML = "RECESS "; 
+                }*/
+            if(time>=1235 && time<=1354)
+                {
+                    document.getElementById("curperiod").innerHTML = "RECESS";
+                    document.getElementById("nextperiod").innerHTML = "MIII - IT1"; 
+                }
+            if(time>=1355 && time<=1444)
+                {
+                    document.getElementById("curperiod").innerHTML = "MIII - IT1";
+                    document.getElementById("nextperiod").innerHTML = "DS - IT1"; 
+                }
+            if(time>=1445 && time<=1624)
+                {
+                    document.getElementById("curperiod").innerHTML = "DS - IT1";
+                    document.getElementById("nextperiod").innerHTML = "CM - IT1"; 
+                }
+            /*if(time>=1535 && time<=1624)
+                {
+                    document.getElementById("curperiod").innerHTML = "BE - SN3";
+                    document.getElementById("nextperiod").innerHTML = "FREE "; 
+                }*/
+            if(time>=1625 && time<=1715)
+                {
+                    document.getElementById("curperiod").innerHTML = "CM - IT1";
+                    document.getElementById("nextperiod").innerHTML = "College OVER"; 
+                }
+            else
+                {
+                    documen.getElementById("All").innerHTML = "College Not Started or is Over.";
+                }
+        }
+    if (day==4)
+        {
+           if(time>=915 && time<=1004)
+                {
+                    document.getElementById("curperiod").innerHTML = "CM - IT1";
+                    document.getElementById("nextperiod").innerHTML = "DELD - IT1"; 
+                }
+            if(time>=1005 && time<=1144)
+                {
+                    document.getElementById("curperiod").innerHTML = "DELD - IT1";
+                    document.getElementById("nextperiod").innerHTML = "DS - IT1"; 
+                }
+            /*if(time>=1055 && time<=1144)
+                {
+                    document.getElementById("curperiod").innerHTML = "OOPS - SN3";
+                    document.getElementById("nextperiod").innerHTML = "MIII - SN3"; 
+                }*/
+            if(time>=1145 && time<=1234)
+                {
+                    document.getElementById("curperiod").innerHTML = "DS - IT1";
+                    document.getElementById("nextperiod").innerHTML = "RECESS "; 
+                }
+            if(time>=1235 && time<=1354)
+                {
+                    document.getElementById("curperiod").innerHTML = "RECESS";
+                    document.getElementById("nextperiod").innerHTML = "MIII -IT2"; 
+                }
+            if(time>=1355 && time<=1444)
+                {
+                    document.getElementById("curperiod").innerHTML = "MIII - IT2";
+                    document.getElementById("nextperiod").innerHTML = "BE LAB"; 
+                }
+            if(time>=1445 && time<=1715)
+                {
+                    document.getElementById("curperiod").innerHTML = "BE LAB";
+                    document.getElementById("nextperiod").innerHTML = "COLLEGE OVER"; 
+                }
+            /*if(time>=1535 && time<=1624)
+                {
+                    document.getElementById("curperiod").innerHTML = "BE - SN3";
+                    document.getElementById("nextperiod").innerHTML = "FREE "; 
+                }
+            if(time>=1625 && time<=1715)
+                {
+                    document.getElementById("curperiod").innerHTML = "FREE";
+                    document.getElementById("nextperiod").innerHTML = "FREE"; 
+                }*/
+            else
+                {
+                    documen.getElementById("All").innerHTML = "College Not Started or is Over.";
+                }
+        }   
+    if (day==5)
+        {
+            /*if(time>=915 && time<=1004)
+                {
+                    document.getElementById("curperiod").innerHTML = "DS - SN3";
+                    document.getElementById("nextperiod").innerHTML = "CM - SN3"; 
+                }
+            if(time>=1005 && time<=1054)
+                {
+                    document.getElementById("curperiod").innerHTML = "CM - SN3";
+                    document.getElementById("nextperiod").innerHTML = "OOPS - SN3"; 
+                }*/
+            if(time>=1055 && time<=1144)
+                {
+                    document.getElementById("curperiod").innerHTML = "MIII - IT1";
+                    document.getElementById("nextperiod").innerHTML = "DS - IT1"; 
+                }
+            if(time>=1145 && time<=1234)
+                {
+                    document.getElementById("curperiod").innerHTML = "DS - IT1";
+                    document.getElementById("nextperiod").innerHTML = "RECESS "; 
+                }
+            if(time>=1235 && time<=1354)
+                {
+                    document.getElementById("curperiod").innerHTML = "RECESS";
+                    document.getElementById("nextperiod").innerHTML = "BE - IT1"; 
+                }
+            if(time>=1355 && time<=1534)
+                {
+                    document.getElementById("curperiod").innerHTML = "BE - IT1";
+                    document.getElementById("nextperiod").innerHTML = "OOPS - IT1"; 
+                }
+            /*if(time>=1445 && time<=1534)
+                {
+                    document.getElementById("curperiod").innerHTML = "PD - SN3";
+                    document.getElementById("nextperiod").innerHTML = "BE - SN3"; 
+                }*/
+            if(time>=1535 && time<=1715)
+                {
+                    document.getElementById("curperiod").innerHTML = "OOPS - IT1";
+                    document.getElementById("nextperiod").innerHTML = "FREE "; 
+                }
+            /*if(time>=1625 && time<=1715)
+                {
+                    document.getElementById("curperiod").innerHTML = "FREE";
+                    document.getElementById("nextperiod").innerHTML = "FREE"; 
+                }*/
+            else
+                {
+                    documen.getElementById("All").innerHTML = "College Not Started or is Over.";
+                }
+        }
+    if (day==6)
+        {
+            document.getElementById("All").innerHTML = "HOLIDAY";
+            //document.getElementById("nextperiod").innerHTML = "SATURDAY HOLIDAY";
+        } 
+    
+   
+
+    
+</script>
+    
+    <br>
+    
+    <div class="container text-center">
+  <!--<h2>TIME-TABLE</h2>-->
+  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">TIME-TABLE</button>
+  <div id="demo" class="collapse">
+      <div class="container tab " style="font-size: 0.3em;">
+  <!--<h2>Time Table</h2>-->
+  <p>This is the full Time Table of IT 3rd Semester session 2017-18.</p>                                                                                      
+  <div class="table-responsive tab">          
+  <table class="table tab ">
+    <thead>
+      <tr>
+        <th>DAY/PERIOD</th>
+        <th>I</th>
+        <th>II</th>
+        <th>III</th>
+        <th>IV</th>
+        <th>V</th>
+          <th>VI</th>
+          <th>VII</th>
+          <th>VIII</th>
+          <th>IX</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>MONDAY</td>
+        <td>DS - SN3</td>
+        <td>CM - SN3</td>
+        <td>OOPS - SN3</td>
+        <td>MIII - SN3</td>
+          <td>RECESS</td>
+        <td>PD - SN3</td>
+        <td>PD - SN3</td>
+          <td>BE - SN3</td>
+          <td>FREE</td>
+          
+      </tr>
+        <tr>
+        <td>TUESDAY</td>
+        <td>OOPS - SN2</td>
+        <td>CM - SN2</td>
+        <td>DELD - SN2</td>
+        <td>DELD - SN2</td>
+          <td>RECESS</td>
+        <td>BE - SN2</td>
+        <td>DS/OOPS LAB</td>
+          <td>DS/OOPS LAB</td>
+          <td>DS/OOPS LAB</td>
+          
+      </tr>
+        <tr>
+        <td>WEDNESSDAY</td>
+        <td>FREE </td>
+        <td>BE/OOPS LAB</td>
+        <td>BE/OOPS LAB</td>
+        <td>BE/OOPS LAB</td>
+          <td>RECESS</td>
+        <td>MIII - IT1</td>
+        <td>DS - IT1</td>
+          <td>DS - IT1</td>
+          <td>CM - IT1</td>
+          
+      </tr>
+        <tr>
+        <td>THURSDAY</td>
+        <td>CM - IT1</td>
+        <td>DELD - IT1</td>
+        <td>DELD - IT1</td>
+        <td>DS - IT1</td>
+          <td>RECESS</td>
+        <td>MIII - IT2</td>
+        <td>BE/DS LAB</td>
+          <td>BE/DS LAB</td>
+          <td>BE/DS LAB</td>
+          
+      </tr>
+        <tr>
+        <td>FRIDAY</td>
+        <td>FREE</td>
+        <td>FREE</td>
+        <td>MIII - IT1</td>
+        <td>DS - IT1</td>
+          <td>RECESS</td>
+        <td>BE - IT1</td>
+        <td>BE - IT1</td>
+          <td>OOPS - IT1</td>
+          <td>OOPS - IT1</td>
+          
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+    <br>
+    
+  </div>
+</div><br>
+    
+<footer class="container-fluid bg-4 text-center">
+  <p>Made By - Bhunwneshwar Anand - 2017</p>
+</footer>
+</body>
+</html>
